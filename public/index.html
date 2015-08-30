@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='skibay'>
   <head>
     <meta charset="utf-8">
-    <title>Rope Drop Ski Shop</title>
+    <title>$KIBAY</title>
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js'></script>
+    <script src='/bower_components/jquery/dist/jquery.min.js'></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <link rel='stylesheet' href='http://bootswatch.com/slate/bootstrap.min.css'/>
-    <!-- <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" /> -->
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <script src='/javascripts/app.js'></script>
     <script src='/javascripts/controllers.js'></script>
@@ -22,7 +22,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">SkiBay</a>
+          <a class="navbar-brand" href="#">
+            <span style='color: rgb(251, 31, 31)'>S</span>
+            <span style='color: rgb(28, 160, 255)'>K</span>
+            <span style='color: yellow'>I</span>
+            <span style='color: rgb(74, 233, 41)'>B</span>
+            <span style='color: red'>A</span>
+            <span style='color: rgb(28, 160, 255)'>Y</span>
+            </a>
         </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -32,9 +39,9 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Sign In</a></li>
+              <li><a href="#">Register</a></li>
+              <li><a href="#">Sell</a></li>
               <li class="divider"></li>
               <li><a href="#">Separated link</a></li>
               <li class="divider"></li>
@@ -49,31 +56,26 @@
           <button type="submit" class="btn btn-default"><span class='glyphicon glyphicon-search'></span></button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
+          <li><button class='btn btn-default btn-lg'><span class='glyphicon glyphicon-shopping-cart'></span></button></li>
         </ul>
       </div>
     </div>
   </nav>
     <div class="jumbotron">
-      <h1 id='jumbo'>Rope Drop Ski Shop</h1>
-      <h3>Welcome home Powder Hounds.<h3>
+      <h1 id='jumbo'>
+        <span style='color: rgb(251, 31, 31)'>S</span>
+        <span style='color: rgb(28, 160, 255)'>k</span>
+        <span style='color: yellow'>i</span>
+        <span style='color: rgb(74, 233, 41)'>B</span>
+        <span style='color: red'>a</span>
+        <span style='color: rgb(28, 160, 255)'>y</span>
+      </h1>
+      <h3>Welcome home Powder Hounds. Shop til ya drop...cliffs.<h3>
       <p><a class="btn btn-primary btn-lg">Why Us</a></p>
     </div>
 
-    <table class="table table-striped table-hover ">
-      <thead>
-        <tr>
-          <th>Ski</th>
-          <th>Info</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Atomic Automatic</td>
-          <td>Its info</td>
-        </tr>
-      </tbody>
-    </table>
+    <ng-view></ng-view>
+
 
 
   </body>

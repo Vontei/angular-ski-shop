@@ -9,6 +9,9 @@ a {
 
 .jumbotron{
   padding-left: 25px;
+  background-image: url(http://www.ifranempreinte.com/wp-content/uploads/2014/08/ski-resort-world-hd-wallpaper-1920x1080-26631.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #jumbo{
