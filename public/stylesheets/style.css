@@ -17,3 +17,21 @@ a {
 #jumbo{
   color: #71C500;
 }
+
+.panel{
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 100%;
+}
+
+
+
+td img{
+margin: 0 auto;
+margin-top: 20px;
+
+}
+
+td .panel-heading h3{
+  color: rgb(74, 233, 41);
+}

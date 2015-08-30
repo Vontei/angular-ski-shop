@@ -1,23 +1,99 @@
+<label>Search by category</label>
+<select>
+  <option>powder</option>
+  <option>freeride</option>
+  <option>race</option>
+  <option>moment</option>
+  <option>rossignol</option>
+</select>
+<label>Sort by price</label>
+<select ng-model='sortPrice'>
+  <option value='price'>Low to High</option>
+  <option value='-price'>High to Low</option>
+</select>
+
+
 <table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Ski</th>
-      <th>Info</th>
+      <th>Product Info</th>
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat='item in items'>
-      <td><img ng-src='{{item.imageUrl}}'</td>
+    <tr ng-repeat='item in items | orderBy: sortPrice | filter: query'>
+      <td><img  class='thumbnail' height='592' width='450' ng-src='{{item.imageUrl}}'></td>
       <td>
-        <ul>
-          <li>{{item.name}}</li>
-          <li>{{item.name}}</li>
-          <li>{{item.name}}</li>
-          <li>{{item.name}}</li>
-          <li>{{item.name}}</li>
-          <li>{{item.name}}</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <div class="panel panel-default pull-right">
+          <div class="panel-heading">
+            <h3>{{item.name}}</h3>
+              <label>Quantity</label>
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <button class='btn btn-default btn-md'>Add to Quiver</button>
+
+          </div>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Price</td>
+                  <td ng-model='price'>{{item.price | currency}}</td>
+                </tr>
+                <tr>
+                  <td>Length</td>
+                  <td>{{item.length}}</td>
+                </tr>
+                <tr>
+                  <td>Dimensions</td>
+                  <td>{{item.dimensions}}</td>
+                </tr>
+                <tr>
+                  <td>Turn Radius</td>
+                  <td>{{item.turnRadius}}</td>
+                </tr>
+                <tr>
+                  <td>Profile</td>
+                  <td>{{item.profile}}</td>
+                </tr>
+                <tr>
+                  <td>Construction</td>
+                  <td>{{item.construction}}</td>
+                </tr>
+                <tr>
+                  <td>Core</td>
+                  <td>{{item.core}}</td>
+                </tr>
+                <tr>
+                  <td>Use</td>
+                  <td>{{item.use}}</td>
+                </tr>
+                <tr>
+                  <td>Warranty</td>
+                  <td>{{item.warranty}}</td>
+                </tr>
+                <tr>
+                  <td>In Stock</td>
+                  <td>{{item.inStock}}</td>
+                </tr>
+                <tr>
+                  <td>Stars</td>
+                  <td>{{item.rating}}</td>
+                </tr>
+                <tr>
+                  <td>Categories</td>
+                  <td>
+                  <p ng-repeat='cat in item.categories'>{{cat}}</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>

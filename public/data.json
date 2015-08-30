@@ -59,22 +59,42 @@
 
     {
         "_id": "55c8ee82152165d244b98300",
-        "name": "Moment Chipotle Banana",
-        "dimensions": "[185] 139/122/134",
-        "turnRadius": "33m",
-        "profile": "radius rocker",
-        "construction": "sandwich",
-        "core": "aspen, ash, carbon laminates, fiberglass laminates",
+        "name": "4FRNT HOJI",
+        "dimensions": "[187cm] 130 / 112 / 121 mm,",
+        "turnRadius": "30m",
+        "profile": "reverse camber",
+        "construction": "half-cap",
+        "core": "wood",
         "use": "freeride, powder",
-        "warranty": "2 years",
-        "selloutRisk": 5,
-        "price": 779.95,
+        "warranty": "1 years",
+        "selloutRisk": 6,
+        "price": 412.49,
         "inStock": true,
-        "rating": 1,
-        "imageUrl": "http://content.backcountry.com/images/items/900/MMT/MMT000R/ONECOL.jpg",
+        "rating": 4,
+        "imageUrl": "http://content.backcountry.com/images/items/900/FTS/FTS000C/ONECOL.jpg",
         "__v": 0,
-        "length": 185,
-        "categories": [ "moment", "freeride", "powder"]
+        "length": 187,
+        "categories": [ "4FRNT", "freeride", "powder"]
+    },
+
+    {
+        "_id": "55c8ee82152165d244b98300",
+        "name": "Rossignol Squad 7",
+        "dimensions": "145 / 120 / 126 mm",
+        "turnRadius": "29.5 m",
+        "profile": "powder turn rocker",
+        "construction": "sandwich",
+        "core": "Paulownia ultra-light wood",
+        "use": "freeride, powder",
+        "warranty": "1 year",
+        "selloutRisk": 8,
+        "price": 359.58,
+        "inStock": true,
+        "rating": 5,
+        "imageUrl": "http://content.backcountry.com/images/items/900/ROS/ROS0923/ONECOL.jpg",
+        "__v": 0,
+        "length": 180,
+        "categories": [ "rossignol", "freeride", "powder"]
     },
 
     {
@@ -176,7 +196,6 @@
         "length": 185,
         "categories": [ "moment", "freeride", "powder"]
     },
-
     {
         "_id": "55c8ee82152165d244b98300",
         "name": "Moment Chipotle Banana",
@@ -195,24 +214,5 @@
         "__v": 0,
         "length": 185,
         "categories": [ "moment", "freeride", "powder"]
-    },
-    {
-        "_id": "55c8ee82152165d244b98300",
-        "name": "Moment Chipotle Banana",
-        "dimensions": "[185] 139/122/134",
-        "turnRadius": "33m",
-        "profile": "radius rocker",
-        "construction": "sandwich",
-        "core": "aspen, ash, carbon laminates, fiberglass laminates",
-        "use": "freeride, powder",
-        "warranty": "2 years",
-        "selloutRisk": 5,
-        "price": 779.95,
-        "inStock": true,
-        "rating": 1,
-        "imageUrl": "http://content.backcountry.com/images/items/900/MMT/MMT000R/ONECOL.jpg",
-        "__v": 0,
-        "length": 185,
-        "categories": [ "moment", "freeride", "powder"]
-    },
+    }
 ]
