@@ -21,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat='item in items | orderBy: sortPrice | filter: query'>
+    <tr class='animated flipInX' ng-repeat='item in items | orderBy: sortPrice | filter: query'>
       <td><img  class='thumbnail' height='592' width='450' ng-src='{{item.imageUrl}}'></td>
       <td>
         <div class="panel panel-default pull-right">
