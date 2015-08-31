@@ -1,3 +1,11 @@
+app.controller('navController', ['$scope', 'skiFactory',
+  function($scope, skiFactory){
+    //get shoppingCart count for Nav Bar
+    $scope.cartCount = skiFactory.shoppingCart;
+  }
+])
+
+
 
 app.controller('itemsController', ['$scope','$http','skiFactory',
   function($scope, $http, skiFactory){
@@ -8,7 +16,8 @@ app.controller('itemsController', ['$scope','$http','skiFactory',
 
     //add stuff to the cart
     $scope.addToCart = function(){
-      console.log(this.item)
+      // skiFactory.cartTotal += this.item.price
+      console.log(this.item.price)
       skiFactory.addToCart(this.item)
       console.log(skiFactory.shoppingCart)
     }
@@ -21,16 +30,22 @@ app.controller('itemsController', ['$scope','$http','skiFactory',
 
 app.controller('cartController', ['$scope', '$http','skiFactory',
   function ($scope, $http, skiFactory) {
-    $scope.total = 100;
-    $scope.shoppingCart = skiFactory.shoppingCart
-    $scope.toggleForm = function () {
+
+    //cart total amount
+    $scope.cartTotal = skiFactory.cartTotal()
+    //shopping cart object
+    $scope.shoppingCart = skiFactory.shoppingCart;
+
+    //toggle edit
+    $scope.toggleForm = function (){
       $scope.showingForm = !$scope.showingForm;
     }
 
+    //remove item from cart
     $scope.removeItem = function(){
-      var i = skiFactory.shoppingCart.indexOf(this.item);
-      skiFactory.shoppingCart.splice(i, 1);
-    }
 
+      skiFactory.removeItem(this.item)
+      $scope.cartTotal= skiFactory.cartTotal()
+    }
   }
 ]);
