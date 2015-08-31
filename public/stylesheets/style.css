@@ -6,7 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
- 
+
 .jumbotron{
   padding-left: 25px;
   background-image: url(http://www.ifranempreinte.com/wp-content/uploads/2014/08/ski-resort-world-hd-wallpaper-1920x1080-26631.jpg);
@@ -24,7 +24,13 @@ a {
   width: 100%;
 }
 
+.glyphicon-leaf{
+  color: rgb(60, 247, 30);
+}
 
+.glyphicon-fire{
+  color: rgb(233, 76, 8);
+}
 
 td img{
 margin: 0 auto;

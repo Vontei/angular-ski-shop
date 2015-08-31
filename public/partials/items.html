@@ -1,32 +1,34 @@
 <label>Search by category</label>
-<select ng-model='sortCats'>
-  <option value='powder'>powder</option>
-  <option value='freeride'>freeride</option>
-  <option value='race'>race</option>
-  <option value='moment'>moment</option>
-  <option value='rossignol'>rossignol</option>
-  <option value='touring'>touring</option>
-  <option value='armada'>armada</option>
-  <option value='line'>line</option>
-  <option value='salomon'>salomon</option>
-  <option value='blizzard'>blizzard</option>
-  <option value='4FRNT'>4FRNT</option>
-</select>
+  <select ng-model='sortCats'>
+    <option value=''>ALL</option>
+    <option value='powder'>powder</option>
+    <option value='freeride'>freeride</option>
+    <option value='race'>race</option>
+    <option value='moment'>moment</option>
+    <option value='rossignol'>rossignol</option>
+    <option value='touring'>touring</option>
+    <option value='armada'>armada</option>
+    <option value='line'>line</option>
+    <option value='salomon'>salomon</option>
+    <option value='blizzard'>blizzard</option>
+    <option value='4FRNT'>4FRNT</option>
+  </select>
 <label>Sort by price</label>
-<select ng-model='sortPrice'>
-  <option value='price'>Low to High</option>
-  <option value='-price'>High to Low</option>
-</select>
+  <select ng-model='sortPrice'>
+    <option value='price'>Low to High</option>
+    <option value='-price'>High to Low</option>
+  </select>
 <label>Sort by size</label>
-<select ng-model='sortSize'>
-  <option value='179'>179</option>
-  <option value='180'>180</option>
-  <option value='182'>182</option>
-  <option value='185'>185</option>
-  <option value='186'>186</option>
-  <option value='187'>187</option>
-  <option value='190'>190</option>
-</select>
+  <select ng-model='sortSize'>
+    <option value=''>ALL</option>
+    <option value='179'>179</option>
+    <option value='180'>180</option>
+    <option value='182'>182</option>
+    <option value='185'>185</option>
+    <option value='186'>186</option>
+    <option value='187'>187</option>
+    <option value='190'>190</option>
+  </select>
 
 
 <table class="table table-striped table-hover ">
@@ -37,7 +39,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr class='animated flipInX' ng-repeat='item in items | orderBy: sortPrice | filter: query | filter: sortCats | filter: sortSize'>
+    <tr class='animated flipInY' ng-repeat='item in items | orderBy: sortPrice | filter: query | filter: sortCats | filter: sortSize'>
       <td><img  class='thumbnail' height='592' width='450' ng-src='{{item.imageUrl}}'></td>
       <td>
         <div class="panel panel-primary pull-right">
@@ -51,8 +53,7 @@
                 <option>4</option>
                 <option>5</option>
               </select>
-              <button ng-click='addToCart(item)' class='btn btn-default btn-md'>Add to Quiver</button>
-
+              <button ng-click='addToCart()' class='btn btn-default btn-md'>Add to Quiver</button>
           </div>
             <table class="table">
               <tbody>
@@ -94,7 +95,10 @@
                 </tr>
                 <tr>
                   <td>In Stock</td>
-                  <td>{{item.inStock}}</td>
+                  <td>
+                    <span ng-show="{{item.inStock}}"><span class='glyphicon glyphicon-leaf'></span></span>
+                    <span ng-show="{{!item.inStock}}"><span class='glyphicon glyphicon-fire'></span></span>
+                  </td>
                 </tr>
                 <tr>
                   <td>Stars</td>

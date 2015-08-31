@@ -1,6 +1,6 @@
 
 <div class=''>
-  <h1 class='pull-left'>My Shopping Cart:</h1>
+  <h1 class='pull-left'>My Shopping Cart: {{shoppingCart.length}} </h1>
   <h1 class='pull-right'>Total: 0</h1>
 </div>
 
@@ -19,6 +19,7 @@
         <div class="panel panel-primary pull-right">
           <div class="panel-heading">
             <h3>{{item.name}}</h3>
+              <div ng-show='showingForm'>
               <label>Quantity</label>
               <select>
                 <option>1</option>
@@ -27,7 +28,9 @@
                 <option>4</option>
                 <option>5</option>
               </select>
-              <button class='btn btn-default btn-md'>Add to Quiver</button>
+            </div>
+              <button ng-click='toggleForm()' class='btn btn-warning btn-md'>Edit</button>
+              <button ng-click='removeItem()' class='btn btn-danger btn-md'>Remove</button>
 
           </div>
             <table class="table">

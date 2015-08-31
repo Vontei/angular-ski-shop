@@ -5,13 +5,11 @@ app.config(function ($routeProvider, $locationProvider) {
     .when('/', {
       templateUrl: 'partials/items.html',
       controller: 'itemsController',
-      contoller: 'cartController'
 
     })
     .when('/cart', {
       templateUrl: 'partials/cart.html',
-      contoller: 'cartController',
-      controller: 'itemsController'
+      controller: 'cartController',
     })
 
 });

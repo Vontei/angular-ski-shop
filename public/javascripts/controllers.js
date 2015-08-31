@@ -1,15 +1,16 @@
 
-app.controller('itemsController', ['$scope','$http',
+app.controller('itemsController', ['$scope','$http','skiFactory',
   function($scope, $http, skiFactory){
-
+    //get data
     $http.get('/data.json').then(function (data) {
       $scope.items = data.data
     })
 
-    $scope.shoppingCart = []
-
+    //add stuff to the cart
     $scope.addToCart = function(){
-      $scope.shoppingCart.push(this.item)
+      console.log(this.item)
+      skiFactory.addToCart(this.item)
+      console.log(skiFactory.shoppingCart)
     }
 
 
@@ -18,7 +19,18 @@ app.controller('itemsController', ['$scope','$http',
 
 
 
-app.controller('cartController', ['$scope', '$http',
-  function ($scope, $http) {
+app.controller('cartController', ['$scope', '$http','skiFactory',
+  function ($scope, $http, skiFactory) {
+    $scope.total = 100;
+    $scope.shoppingCart = skiFactory.shoppingCart
+    $scope.toggleForm = function () {
+      $scope.showingForm = !$scope.showingForm;
+    }
+
+    $scope.removeItem = function(){
+      var i = skiFactory.shoppingCart.indexOf(this.item);
+      skiFactory.shoppingCart.splice(i, 1);
+    }
+
   }
-])
+]);
