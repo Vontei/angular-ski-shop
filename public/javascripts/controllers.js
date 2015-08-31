@@ -1,11 +1,24 @@
+
 app.controller('itemsController', ['$scope','$http',
-  function($scope, $http){
-    console.log('hi')
+  function($scope, $http, skiFactory){
+
     $http.get('/data.json').then(function (data) {
-      console.log(data)
       $scope.items = data.data
     })
 
+    $scope.shoppingCart = []
+
+    $scope.addToCart = function(){
+      $scope.shoppingCart.push(this.item)
+    }
+
+
   }
 ]);
- 
+
+
+
+app.controller('cartController', ['$scope', '$http',
+  function ($scope, $http) {
+  }
+])
