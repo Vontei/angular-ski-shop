@@ -46,12 +46,12 @@
           <div class="panel-heading">
             <h3>{{item.name}}</h3>
               <label>Quantity</label>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <select ng-model='qty'>
+                <option value="1" selected >1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
               </select>
               <button ng-click='addToCart()' class='btn btn-default btn-md'>Add to Quiver</button>
           </div>
