@@ -24,6 +24,7 @@ app.factory('skiFactory', function () {
       cartTotal -= (item.price);
       var i = this.shoppingCart.indexOf(item);
       this.shoppingCart.splice(i, 1);
+      if(this.shoppingCart.length===0) cartTotal = 0;
       this.shoppingCart.forEach(function (e) {
         newPrice+= e.price;
       })
